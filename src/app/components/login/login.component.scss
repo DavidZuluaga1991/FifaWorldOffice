@@ -1,0 +1,13 @@
+@import './../../../assets/styles/variable';
+.login {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $blue-2;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
