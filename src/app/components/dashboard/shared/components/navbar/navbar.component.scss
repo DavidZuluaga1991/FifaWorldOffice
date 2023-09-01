@@ -1,0 +1,33 @@
+@import 'variable';
+.navbar {
+  background-color: $blue-2;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  &__title {
+    margin: 0;
+    color: $white-1;
+  }
+  &__actions {
+    margin: 0 0 0 auto;
+    list-style-type: none;
+    margin-block: 0;
+    padding: 0;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    &__option {
+    }
+  }
+}
+.action {
+  color: $white-1;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration:none;
+  &:is(&--active, :hover) {
+    color: $blue-3;
+  }
+}

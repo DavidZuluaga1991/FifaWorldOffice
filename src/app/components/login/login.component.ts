@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginService } from './shared/services/login/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,19 +15,14 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [ Validators.required ])
   });
 
-  constructor(private loginService: LoginService) {}
+  constructor(private readonly router: Router, private loginService: LoginService) {}
 
-  ngOnInit(): void {
-    this.loginForm.valueChanges.subscribe(error => {
-      console.log(error)
-      const errorr = this.loginForm.get('email')?.getError('required');
-      console.log(errorr);
-    });
-  }
+  ngOnInit(): void {}
 
   public login(): void {
     this.loginService.login(this.loginForm.value).subscribe(login => {
-      console.log(login);
+      localStorage.setItem('token', login.id);
+      this.router.navigate(['dashboard']);
     });
   }
 

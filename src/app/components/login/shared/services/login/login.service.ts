@@ -12,7 +12,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   public login(user: UserLogin): Observable<any> {
-    const concatUri = `${this.uri}/login`;
+    const concatUri = `https://64f0ca458a8b66ecf77a20d1.mockapi.io/api/login`;
     return this.http.post<any>(concatUri, user);
   }
 }

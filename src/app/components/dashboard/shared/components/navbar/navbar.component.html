@@ -1,0 +1,22 @@
+<nav class="navbar">
+  <h2 class="navbar__title">Fifa</h2>
+  <ul class="navbar__actions">
+    <li class="navbar__actions__option">
+      <a  class="action" [routerLink]="['/dashboard/list']" routerLinkActive="action--active" >
+        List groups
+      </a>
+    </li>
+    <li class="navbar__actions__option">
+      <a  class="action" [routerLink]="['/dashboard/team']" routerLinkActive="action--active" >
+        Create group
+      </a>
+    </li>
+    <li class="navbar__actions__option">
+      <a>
+        <span class="material-icons">
+        logout
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>

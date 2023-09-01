@@ -1,0 +1,63 @@
+<div class="team">
+  <div class="team__content">
+    <h3 class="team__content__title">{{ !id ? 'Crear' : 'Modificar' }} equipo</h3>
+    <form [formGroup]="teamForm" class="team__content__formulary">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input type="text" matInput formControlName="nombre" placeholder="Nombre">
+        <mat-error *ngIf="teamForm.get('nombre')?.hasError('required')">
+          El nombre es <strong>Requerido</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Estadio</mat-label>
+        <input type="text" matInput formControlName="estadio" placeholder="Estadio">
+        <mat-error *ngIf="teamForm.get('estadio')?.hasError('required')">
+          El estadio es <strong>Requerido</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Sitio web</mat-label>
+        <input type="text" matInput formControlName="sitioWeb" placeholder="Sitio web">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Estadio</mat-label>
+        <input type="text" matInput formControlName="estadio" placeholder="Estadio">
+        <mat-error *ngIf="teamForm.get('estadio')?.hasError('required')">
+          El estadio es <strong>Requerido</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Nacionalidad</mat-label>
+        <input type="text" matInput formControlName="nacionalidad" placeholder="nacionalidad">
+        <mat-error *ngIf="teamForm.get('nacionalidad')?.hasError('required')">
+          El nacionalidad es <strong>Requerido</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Fundacion</mat-label>
+        <input type="text" matInput formControlName="fundacion" placeholder="Fundacion">
+        <mat-error *ngIf="teamForm.get('fundacion')?.hasError('required')">
+          El fundacion es <strong>Requerido</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>entrenador</mat-label>
+        <input type="text" matInput formControlName="entrenador" placeholder="entrenador">
+        <mat-error *ngIf="teamForm.get('entrenador')?.hasError('required')">
+          El entrenador es <strong>Requerido</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Valor</mat-label>
+        <input type="text" matInput formControlName="valor" placeholder="Valor">
+        <mat-error *ngIf="teamForm.get('valor')?.hasError('required')">
+          El valor es <strong>Requerido</strong>
+        </mat-error>
+      </mat-form-field>
+      <div class="team__content__formulary__actions">
+        <button class="team__content__formulary__actions__action" (click)="actionTeam()" mat-raised-button>{{ !id ? 'Crear' : 'Modificar' }} Equipo</button>
+      </div>
+    </form>
+  </div>
+</div>

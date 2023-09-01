@@ -1,0 +1,58 @@
+<div class="list-groups">
+  <div class="list-groups__content">
+    <form class="list-groups__content__filters" [formGroup]="searchForm">
+      <mat-form-field class="filters__date">
+        <mat-label>ID</mat-label>
+        <input type="number" matInput formControlName="id" placeholder="ID">
+      </mat-form-field>
+      <mat-form-field class="filters__date">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Start date" formControlName="dateinit">
+          <input matEndDate placeholder="End date" formControlName="datefinal">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      <button mat-icon-button class="list-groups__content__filters__search" (click)="searchTeam()" [disabled]="hasSearchDisable"><mat-icon>search</mat-icon></button>
+    </form>
+    <table class="list-groups__table">
+      <thead>
+        <tr>
+          <th>ID team</th>
+          <th>Nombre</th>
+          <th>Estadio</th>
+          <th>Sitio web</th>
+          <th>Nacionalidad</th>
+          <th>Año de fundación</th>
+          <th>Entrenador</th>
+          <th>Capacidad</th>
+          <th>Valor</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let team of teams" class="row">
+          <td class="row__column">{{ team.id }}</td>
+          <td class="row__column">{{ team.nombre }}</td>
+          <td class="row__column">{{ team.estadio}}</td>
+          <td class="row__column">{{ team.sitioWeb }}</td>
+          <td class="row__column">{{ team.nacionalidad }}</td>
+          <td class="row__column">{{ team.fundacion | date: 'yyyy' }}</td>
+          <td class="row__column">{{ team.entrenador }}</td>
+          <td class="row__column">{{ team.capacidad }}</td>
+          <td class="row__column">{{ team.valor | currency }}</td>
+          <td class="row__column">
+            <button  aria-label="Edit" class="row__column__edit" (click)="editTeam(team)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button aria-label="Delete" class="row__column__delete" (click)="deleteTeam(team)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <mat-paginator [length]="totalElements" [pageSize]="10" (page)="changePage($event.pageIndex)" [pageIndex]="pageIndex"></mat-paginator>
+  </div>
+</div>

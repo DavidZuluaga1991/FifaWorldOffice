@@ -1,0 +1,33 @@
+@import 'variable';
+.team {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  &__content {
+    border-radius: 10px;
+    margin-top: 30px;
+    background-color: $blue-1;
+    padding: 20px;
+    height: max-content;
+    &__title {
+      font-weight: 500;
+      font-size: 20px;
+      text-align: center;
+    }
+    &__formulary {
+      display: grid;
+      grid-template-columns: repeat(2, 200px);
+      gap: 10px;
+      &__actions {
+        grid-column: 1 / 3;
+        display: flex;
+        justify-content: center;
+        &__action {
+          height: 30px;
+          width: 170px;
+        }
+      }
+    }
+  }
+}
