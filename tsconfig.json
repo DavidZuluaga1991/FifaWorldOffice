@@ -24,7 +24,8 @@
       "dom"
     ],
     "paths": {
-      "@variable": ["assets/styles/variable.scss"]
+      "@variable": ["assets/styles/variable.scss"],
+      "@shared/*": ["src/app/shared/*"]
     }
   },
   "angularCompilerOptions": {

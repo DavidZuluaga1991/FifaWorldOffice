@@ -40,4 +40,14 @@ export class TeamsService {
     const uriContact = `${this.uri}/equipos/crear`;
     return this.http.post<Team>(uriContact, team);
   }
+
+  public updateTeam(id: number, team: Team): Observable<Team> {
+    const uriContact = `${this.uri}/equipos/actualizar/${id}`;
+    return this.http.put<Team>(uriContact, team);
+  }
+
+  public getTeamById(id: number): Observable<Team> {
+    const uriContact = `${this.uri}/equipos/consultar/${id}`;
+    return this.http.get<Team>(uriContact);
+  }
 }

@@ -23,11 +23,18 @@
         grid-column: 1 / 3;
         display: flex;
         justify-content: center;
+        gap: 15px;
         &__action {
           height: 30px;
           width: 170px;
         }
       }
     }
+  }
+}
+
+.input {
+  &__value {
+    text-transform: capitalize;
   }
 }

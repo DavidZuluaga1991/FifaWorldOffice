@@ -1,0 +1,11 @@
+.notifications {
+  position: absolute;
+  background-color: aqua;
+  bottom: 0;
+  right: 0;
+  min-width: 100px;
+  &__notification {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+}
